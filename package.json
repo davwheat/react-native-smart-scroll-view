@@ -4,7 +4,8 @@
   "description": "Handles keyboard events, auto adjusts content to be visible above keyboard on focus, and much more.",
   "main": "SmartScrollView.js",
   "scripts": {
-    "format": "prettier --write **/*.{js,md}"
+    "format": "prettier --write **/*.{js,md}",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,8 @@
   },
   "homepage": "https://github.com/davwheat/react-native-smarter-scroll-view#readme",
   "devDependencies": {
+    "@react-native-community/eslint-config": "^2.0.0",
+    "eslint": "^7.13.0",
     "prettier": "^2.1.2"
   }
 }
