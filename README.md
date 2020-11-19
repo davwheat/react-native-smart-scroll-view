@@ -1,8 +1,10 @@
 # react-native-smart-scroll-view
 
-[![NPM](https://nodei.co/npm-dl/react-native-smart-scroll-view.png?months=3)](https://nodei.co/npm/react-native-smart-scroll-view/)
+Based off of [nikhilaravi/react-native-smart-scroll-view](https://github.com/nikhilaravi/react-native-smart-scroll-view)
 
-![ComplexFormExample](https://raw.githubusercontent.com/jrans/react-native-smart-scroll-view/master/complexFormExample.gif)
+[![NPM](https://nodei.co/npm-dl/react-native-smarter-scroll-view.png?months=3)](https://nodei.co/npm/react-native-smarter-scroll-view/)
+
+![ComplexFormExample](https://raw.githubusercontent.com/davwheat/react-native-smarter-scroll-view/master/complexFormExample.gif)
 
 A pure JS React Native Component for IOS.
 
@@ -22,6 +24,10 @@ Great for use with forms which have multiple TextInput fields!
 - [TODO](#todo)
 
 ### Installation
+
+```bash
+$ yarn add react-native-smart-scroll-view
+```
 
 ```bash
 $ npm i react-native-smart-scroll-view --save
@@ -44,7 +50,7 @@ In wrapping around the ScrollView and using the TextInput to control keyboard we
 | contentInset                 | `{top: 0, left: 0, bottom: 0, right: 0}` |       `object`       | Set to the ScrollView contentInset prop                                                                                                                                                       |
 | onScroll                     |                `() => {}`                |        `func`        | Set to the ScrollView onScroll function. It will be called alongside our own                                                                                                                  |
 | onRefFocus                   |                 `()=>{}`                 |        `func`        | Gives back the 'ref' of the node whenever a smart component is focused                                                                                                                        |
-| bounces                      |                 `()=>{}`                 |        `bool`        | Controls bouncing of the underlying ScrollView                                                                                                                                                |
+| bounces                      |                 `false`                 |        `bool`        | Controls bouncing of the underlying ScrollView                                                                                                                                                |
 
 #### Smart Component Props
 
