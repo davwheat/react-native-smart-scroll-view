@@ -34,12 +34,12 @@ class SmartScrollView extends Component {
 
   componentDidMount() {
     if (this.props.forceFocusField !== this.state.focusedField) {
-      this._focusField('input_' + this.props.forceFocusField);
+      this._focusField(`input_${this.props.forceFocusField}`);
     }
 
     this._listeners = [
-      Keyboard.addListener(Platform.OS == 'IOS' ? 'keyboardWillShow' : 'keyboardDidShow', this._keyboardWillShow),
-      Keyboard.addListener(Platform.OS == 'IOS' ? 'keyboardWillHide' : 'keyboardDidHide', this._keyboardWillHide),
+      Keyboard.addListener(Platform.OS === 'IOS' ? 'keyboardWillShow' : 'keyboardDidShow', this._keyboardWillShow),
+      Keyboard.addListener(Platform.OS === 'IOS' ? 'keyboardWillHide' : 'keyboardDidHide', this._keyboardWillHide),
     ];
   }
 
@@ -51,7 +51,7 @@ class SmartScrollView extends Component {
 
   componentWillReceiveProps(props) {
     if (props.forceFocusField !== undefined && props.forceFocusField !== this.state.focusedField) {
-      this._focusField('input_' + props.forceFocusField);
+      this._focusField(`input_${props.forceFocusField}`);
     }
   }
 
@@ -60,7 +60,7 @@ class SmartScrollView extends Component {
   }
 
   _findScrollWindowHeight(keyboardHeight) {
-    const { x, y, width, height } = this._layout;
+    const { y, height } = this._layout;
     const spaceBelow = screenHeight - y - height;
     return height - Math.max(keyboardHeight - spaceBelow, 0);
   }
@@ -154,9 +154,9 @@ class SmartScrollView extends Component {
       let smartProps = { key: i };
 
       if (smartScrollOptions.type !== undefined) {
-        const ref = 'input_' + inputIndex;
+        const ref = `input_${inputIndex}`;
 
-        smartProps.ref = this._refCreator(ref, smartScrollOptions.scrollRef && 'input_' + smartScrollOptions.scrollRef);
+        smartProps.ref = this._refCreator(ref, smartScrollOptions.scrollRef && `input_${smartScrollOptions.scrollRef}`);
 
         if (smartScrollOptions.type === 'text') {
           smartProps.onFocus = () => {
@@ -165,7 +165,7 @@ class SmartScrollView extends Component {
           };
 
           if (smartScrollOptions.moveToNext === true) {
-            const nextRef = 'input_' + (inputIndex + 1);
+            const nextRef = `input_${inputIndex + 1}`;
             const focusNextField = () => this._focusField(nextRef);
 
             if (typeof element.props.returnKeyType === 'undefined') {
@@ -189,9 +189,9 @@ class SmartScrollView extends Component {
       return React.Children.map(children, (child, j) => {
         if (child && child.props !== undefined) {
           if (child.props.smartScrollOptions !== undefined) {
-            return smartClone(child, '' + i + j);
+            return smartClone(child, `${i}${j}`);
           } else if (child.props.children !== undefined) {
-            return React.cloneElement(child, { key: i }, recursivelyCheckAndAdd(child.props.children, '' + i + j));
+            return React.cloneElement(child, { key: i }, recursivelyCheckAndAdd(child.props.children, `${i}${j}`));
           } else {
             return React.cloneElement(child, { key: i });
           }
