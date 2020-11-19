@@ -32,7 +32,7 @@ class RegistrationPage extends Component {
   }
 
   render() {
-    const { fields, changeInput, validateInput, showTerms, changeTandC, submitContactInfo, toggleTandCModal } = this.props;
+    const { fields, changeInput, validateInput, changeTandC, submitContactInfo, toggleTandCModal } = this.props;
     const smartTexts = textFields.map((field, i) => {
       const { ref, ...extraTextOptions } = field;
       const { value, validated } = fields[ref];
@@ -51,12 +51,12 @@ class RegistrationPage extends Component {
               type: 'text',
             }}
             onEndEditing={() => validateInput(ref)}
-            style={[styles.textInput, validated === false && { borderColor: 'red' }]}
+            style={[styles.textInput, validated === false && styles.errorBorder]}
             enablesReturnKeyAutomatically={true}
             autoCorrect={false}
             {...extraTextOptions}
           />
-          <View style={[styles.tick, validated === true && { backgroundColor: '#4CD964' }]} />
+          <View style={[styles.tick, validated === true && styles.validBg]} />
         </View>
       );
     });
@@ -72,7 +72,7 @@ class RegistrationPage extends Component {
             <View style={styles.ts_and_cs}>
               <Text style={styles.ts_and_cs_text}>Agree to</Text>
               <TouchableOpacity onPress={toggleTandCModal}>
-                <Text style={[styles.ts_and_cs_text, { textDecorationLine: 'underline' }]}> Terms and Conditions</Text>
+                <Text style={[styles.ts_and_cs_text, styles.underline]}> Terms and Conditions</Text>
               </TouchableOpacity>
             </View>
             <Switch
@@ -96,6 +96,15 @@ class RegistrationPage extends Component {
 }
 
 const styles = StyleSheet.create({
+  errorBorder: {
+    borderColor: 'red',
+  },
+  validBg: {
+    backgroundColor: '#4CD964',
+  },
+  underline: {
+    textDecorationLine: 'underline',
+  },
   container: {
     flex: 1,
     alignItems: 'stretch',
@@ -122,7 +131,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     fontSize: 12,
     flex: 1,
-    paddingLeft: 10,
     marginRight: 10,
   },
   tick: {
