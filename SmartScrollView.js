@@ -259,23 +259,3 @@ SmartScrollView.defaultProps = {
 };
 
 export default SmartScrollView;
-
-// import dismissKeyboard from 'dismissKeyboard';
-// this._scrollTap            = this._scrollTap.bind(this);
-// lastTap:         0
-// _scrollTap () {
-//   const {lastTap}  = this.state;
-//   const currentTap = new Date().getTime();
-//   console.log("tap")
-//
-//   if (currentTap - lastTap < 500) {
-//     dismissKeyboard()
-//   }
-//
-//   this.setState({
-//     lastTap: currentTap
-//   })
-// }
-/**
- * Created by Meysam on 5/7/17.
- */
