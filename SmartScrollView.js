@@ -233,8 +233,8 @@ class SmartScrollView extends Component {
 
 SmartScrollView.propTypes = {
   forceFocusField: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  scrollContainerStyle: View.propTypes.style,
-  contentContainerStyle: View.propTypes.style,
+  scrollContainerStyle: ReactNative.ViewPropTypes.style,
+  contentContainerStyle: ReactNative.ViewPropTypes.style,
   zoomScale: PropTypes.number,
   showsVerticalScrollIndicator: PropTypes.bool,
   contentInset: PropTypes.object,
