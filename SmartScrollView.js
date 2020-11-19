@@ -246,7 +246,8 @@ SmartScrollView.propTypes = {
 
 SmartScrollView.defaultProps = {
   scrollContainerStyle: {},
-  scrollPadding: 5,
+  contentContainerStyle: {},
+  scrollPadding: 8,
   zoomScale: 1,
   showsVerticalScrollIndicator: true,
   contentInset: { top: 0, left: 0, bottom: 0, right: 0 },
