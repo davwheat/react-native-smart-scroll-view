@@ -78,11 +78,11 @@ For any component which has 'smartScrollOptions.type = text', it is inferred tha
 
 ### Example Usage
 
-Code for the above gif is found [here](https://github.com/jrans/react-native-smart-scroll-view/blob/master/complexFormExample.js)
+Code for the above gif is found [here](https://github.com/davwheat/react-native-smarter-scroll-view/blob/master/complexFormExample.js)
 
-Here is another [example](https://github.com/jrans/react-native-smart-scroll-view/blob/master/SuperScrollingFormExample/Example.js) of the smart-scroll-view in action.
+Here is another [example](https://github.com/davwheat/react-native-smarter-scroll-view/blob/master/SuperScrollingFormExample/Example.js) of the smart-scroll-view in action.
 
-![SmartScrollViewExample](https://raw.githubusercontent.com/jrans/react-native-smart-scroll-view/master/SuperScrollingFormExample/exampleInAction.gif)
+![SmartScrollViewExample](https://raw.githubusercontent.com/davwheat/react-native-smarter-scroll-view/master/SuperScrollingFormExample/exampleInAction.gif)
 
 To run the code yourself and play around, open and run the Xcode project.
 
@@ -92,11 +92,11 @@ open SuperScrollingFormExample/ios/SuperScrollingFormExample.xcodeproj
 
 ### TODO
 
+> **From original repo. I am not promising anything from this list...**
+
 - Allow for more types other than text input to have smart scroll functionality.
   - i.e. a customisable picker component that can be used to replace keyboard to allow the user to select a value from a picker.
-  - Any image, button, slider....
+  - Any image, button, slider
 - Allow for header/banner above keyboard.
-- Better animations....
+- Better animations
 - Your issues/suggestions!
-
-##### Feel free to comment, question, create issues, submit PRs... to make this view even smarter
